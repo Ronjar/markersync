@@ -66,7 +66,6 @@ pdf_to_md <- function(pdf_path,
   }
 
   resp <- req |>
-    httr2::req_auth_basic(username = marker_user, password = marker_pass) |>
     httr2::req_body_multipart(!!!body_parts) |>
     httr2::req_timeout(timeout) |>
     httr2::req_error(is_error = function(r) FALSE) |>
